@@ -7,7 +7,8 @@ export function useProducts() {
         try {
             const response = await axios.get(productsUrl, {
                 headers: {
-                    "Access-Control-Allow-Origin": "*"
+                    "Access-Control-Allow-Origin": "*",
+                    "Content-Type": "application/json",
                 }
             });
 
