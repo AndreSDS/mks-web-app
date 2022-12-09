@@ -7,9 +7,12 @@ export function useProducts() {
         try {
             const response = await axios.get(productsUrl, {
                 headers: {
-                    "crossDomain": true,
-                    "Access-Control-Allow-Origin": "*",
-                    "Content-Type": "application/json",
+                    'mode': 'no-cors',
+                    'withCredentials': 'true',
+                    'credentials': 'same-origin',
+                    'Access-Control-Allow-Origin': '*',
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
                 },
                 withCredentials: false,
             });
