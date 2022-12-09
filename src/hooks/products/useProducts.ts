@@ -5,7 +5,11 @@ const productsUrl = "https://mks-frontend-challenge-api.herokuapp.com/api/v1/pro
 export function useProducts() {
     const getProductsData = async () => {
         try {
-            const response = await axios.get(productsUrl);
+            const response = await axios.get(productsUrl, {
+                headers: {
+                    "Access-Control-Allow-Origin": "*"
+                }
+            });
 
             return response.data.products;
         } catch (error) {
